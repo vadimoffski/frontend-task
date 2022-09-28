@@ -5,7 +5,7 @@ export const getProducts = createAsyncThunk(
   'products/getProducts',
   async function (_, { rejectWithValue }) {
     try {
-      const response = await axios.get(`https://dummyjson.com/products`)
+      const response = await axios.get(`https://dummyjson.com/products?limit=5`)
       if (response.status !== 200) {
         throw new Error('Server Error!');
       }
